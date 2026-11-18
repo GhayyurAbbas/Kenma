@@ -1,12 +1,12 @@
-PackageIdentifier: SyedGhayyurAbbas.Kenma
+PackageIdentifier: GhayyurAbbas.Kenma
 PackageVersion: 1.0.0
 PackageLocale: en-US
 Publisher: Kenma contributors
-PublisherUrl: https://github.com/syedghayyurabbas/kenma
+PublisherUrl: https://github.com/GhayyurAbbas
 PackageName: Kenma
-PackageUrl: https://github.com/syedghayyurabbas/kenma
+PackageUrl: https://github.com/GhayyurAbbas/Kenma
 License: MIT
-LicenseUrl: https://github.com/syedghayyurabbas/kenma/blob/main/LICENSE
+LicenseUrl: https://github.com/GhayyurAbbas/Kenma/blob/main/LICENSE
 ShortDescription: Sharpen any prompt. A Windows tray app that turns rough prompts into well-structured ones.
 Description: |-
   Kenma lives in your system tray and turns rough prompts into clear, well-structured prompts for ChatGPT,

@@ -15,7 +15,7 @@ SignPath Foundation's main conditions (check the current list on their site):
 - The project is actively maintained and has a released version.
 - The README has a code signing policy section (template below).
 
-Apply at **https://signpath.org** and link `https://github.com/syedghayyurabbas/kenma`.
+Apply at **https://signpath.org** and link `https://github.com/GhayyurAbbas/Kenma`.
 
 ## 2. Configure SignPath (after approval)
 
@@ -63,8 +63,8 @@ signing request in SignPath before the workflow continues.
 
 Free code signing provided by [SignPath.io](https://signpath.io), certificate by [SignPath Foundation](https://signpath.org).
 
-- Committers and reviewers: [syedghayyurabbas](https://github.com/syedghayyurabbas)
-- Approvers: [syedghayyurabbas](https://github.com/syedghayyurabbas)
+- Committers and reviewers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
+- Approvers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
 
 Privacy: this program does not transfer any information to other networked systems unless specifically
 requested by the user. Prompts are sent only to the AI engine the user selects. See [Privacy](#privacy).

@@ -1,5 +1,5 @@
-# Submit with: wingetcreate submit packaging/winget  (after replacing syedghayyurabbas and the hashes)
-PackageIdentifier: SyedGhayyurAbbas.Kenma
+# Submit with: wingetcreate submit packaging/winget  (after replacing the hashes)
+PackageIdentifier: GhayyurAbbas.Kenma
 PackageVersion: 1.0.0
 InstallerType: zip
 NestedInstallerType: portable
@@ -9,10 +9,10 @@ NestedInstallerFiles:
 MinimumOSVersion: 10.0.17763.0
 Installers:
   - Architecture: x64
-    InstallerUrl: https://github.com/syedghayyurabbas/kenma/releases/download/v1.0.0/Kenma-1.0.0-win-x64.zip
+    InstallerUrl: https://github.com/GhayyurAbbas/Kenma/releases/download/v1.0.0/Kenma-1.0.0-win-x64.zip
     InstallerSha256: REPLACE_WITH_SHA256_FROM_SHA256SUMS
   - Architecture: arm64
-    InstallerUrl: https://github.com/syedghayyurabbas/kenma/releases/download/v1.0.0/Kenma-1.0.0-win-arm64.zip
+    InstallerUrl: https://github.com/GhayyurAbbas/Kenma/releases/download/v1.0.0/Kenma-1.0.0-win-arm64.zip
     InstallerSha256: REPLACE_WITH_SHA256_FROM_SHA256SUMS
 ManifestType: installer
 ManifestVersion: 1.6.0

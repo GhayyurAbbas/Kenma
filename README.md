@@ -54,7 +54,7 @@ It lives in the system tray, opens with a global shortcut (**Ctrl+Alt+P** by def
 
 ```powershell
 # winget
-winget install SyedGhayyurAbbas.Kenma
+winget install GhayyurAbbas.Kenma
 
 # Scoop
 scoop install https://raw.githubusercontent.com/GhayyurAbbas/Kenma/main/packaging/scoop/kenma.json
