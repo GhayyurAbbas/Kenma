@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/GhayyurAbbas/Kenma/releases/download/v1.0.0/Kenma-1.0.0-win-x64.zip",
-            "hash": "REPLACE_WITH_SHA256_FROM_SHA256SUMS"
+            "hash": "c055e945b58bec54e150bc24aa9d08f0dd32585f99a9a123a4994ff1efba7cb2"
         },
         "arm64": {
             "url": "https://github.com/GhayyurAbbas/Kenma/releases/download/v1.0.0/Kenma-1.0.0-win-arm64.zip",
-            "hash": "REPLACE_WITH_SHA256_FROM_SHA256SUMS"
+            "hash": "dff251da7ce77170a04544b5e35836fee8535ab4534263dcb2c584c407632bc6"
         }
     },
     "shortcuts": [["Kenma.exe", "Kenma"]],

@@ -13,7 +13,7 @@ A tiny Windows tray app that turns rough prompts into clear, well-structured one
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D4)
 
-[Download](https://github.com/GhayyurAbbas/Kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [Build](#build-from-source) · [Contributing](CONTRIBUTING.md)
+[Download](https://github.com/GhayyurAbbas/Kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [FAQ](#faq) · [Build](#build-from-source) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -50,14 +50,14 @@ It lives in the system tray, opens with a global shortcut (**Ctrl+Alt+P** by def
 2. Unzip anywhere and run `Kenma.exe`. No installer and no .NET install needed.
 3. Look for the <code>&lt;◆&gt;</code> icon in the tray, or press **Ctrl+Alt+P**.
 
-### Package managers (coming soon)
+### Package managers
 
 ```powershell
-# winget
-winget install GhayyurAbbas.Kenma
-
 # Scoop
 scoop install https://raw.githubusercontent.com/GhayyurAbbas/Kenma/main/packaging/scoop/kenma.json
+
+# winget (coming soon, pending review)
+winget install GhayyurAbbas.Kenma
 ```
 
 > **Note:** Until releases are code-signed, Windows SmartScreen may warn on first launch. Choose **More info → Run anyway**, or build from source.
@@ -108,6 +108,56 @@ API keys can also come from the usual environment variables (`ANTHROPIC_API_KEY`
 | Start with Windows | `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` |
 
 To uninstall, untick *Start with Windows*, exit from the tray, delete the app folder and, if you like, the folders above.
+
+## FAQ
+
+<details>
+<summary><b>What does a prompt enhancer actually do?</b></summary>
+
+It rewrites a short, vague request into a prompt an AI model can act on well: a clear task, the relevant context, constraints, and the output format you want. Where something important is missing, Kenma asks for it or marks it with a `[PLACEHOLDER]` instead of inventing details.
+</details>
+
+<details>
+<summary><b>Does it work with ChatGPT, Claude, Gemini and Copilot?</b></summary>
+
+Yes. Kenma produces plain text, so you can paste the result into ChatGPT, Claude, Gemini, Copilot, Cursor, Claude Code, Midjourney or any other tool. Separately, you choose which AI Kenma itself uses to do the rewriting (see [Engines](#engines)).
+</details>
+
+<details>
+<summary><b>Is it free?</b></summary>
+
+Kenma is free and open source (MIT). If you use a cloud engine, you pay that provider for your own API usage. Claude Code, local models (Ollama, LM Studio) and the offline template cost nothing extra.
+</details>
+
+<details>
+<summary><b>Can I use it offline, with no API key?</b></summary>
+
+Yes. Run a model locally with [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) and Kenma works with no internet at all. With no AI available, the offline template still structures your prompt and marks the gaps.
+</details>
+
+<details>
+<summary><b>Is my prompt sent anywhere?</b></summary>
+
+Only to the engine you chose, and every result shows which engine answered. With a local model, nothing leaves your PC. Kenma has no telemetry and never logs prompt text. See [Privacy](#privacy).
+</details>
+
+<details>
+<summary><b>Is it good for coding prompts?</b></summary>
+
+Yes. Prompts for coding agents (Claude Code, Cursor, Copilot) get a scope fence, the open questions that block the work, and a "report findings before changing code" step, so the agent investigates before it edits.
+</details>
+
+<details>
+<summary><b>Why does Windows SmartScreen warn me?</b></summary>
+
+New apps that aren't code-signed yet get this warning. Kenma is built from this repo's source by GitHub Actions, and each release lists SHA-256 checksums you can verify. Choose **More info → Run anyway**, or build it yourself.
+</details>
+
+<details>
+<summary><b>Does it run on Windows 10, macOS or Linux?</b></summary>
+
+Windows 10 (1809 or later) and Windows 11, on x64 and ARM64. macOS and Linux aren't supported.
+</details>
 
 ## Build from source
 
