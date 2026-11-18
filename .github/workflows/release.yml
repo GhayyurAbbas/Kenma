@@ -1,0 +1,82 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+  actions: read   # SignPath downloads the unsigned artifact from this run
+
+# Code signing (SignPath Foundation) switches on automatically once these are set in the repo settings:
+#   Variables: SIGNPATH_ORGANIZATION_ID, SIGNPATH_PROJECT_SLUG, SIGNPATH_SIGNING_POLICY_SLUG
+#   Secret:    SIGNPATH_API_TOKEN
+# Until then releases are built unsigned. See docs/SIGNING.md.
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Test
+        run: dotnet test Kenma.slnx -c Release
+
+      - name: Build
+        shell: pwsh
+        run: |
+          $version = '${{ github.ref_name }}'.TrimStart('v')
+          "VERSION=$version" >> $env:GITHUB_ENV
+          foreach ($rid in 'win-x64', 'win-arm64') {
+            dotnet publish Kenma/Kenma.csproj -c Release -r $rid --self-contained true `
+              -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true `
+              -p:EnableCompressionInSingleFile=true -p:DebugType=none -p:Version=$version -o "out/unsigned/$rid"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          # small build for people who already have the .NET 10 Desktop Runtime
+          dotnet publish Kenma/Kenma.csproj -c Release -r win-x64 --self-contained false `
+            -p:PublishSingleFile=true -p:DebugType=none -p:Version=$version -o "out/unsigned/win-x64-net10-runtime"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Upload unsigned build
+        id: unsigned
+        if: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: unsigned
+          path: out/unsigned/
+          if-no-files-found: error
+
+      - name: Sign with SignPath
+        if: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG }}
+          signing-policy-slug: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG }}
+          github-artifact-id: ${{ steps.unsigned.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: out/signed
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $source = if (Test-Path out/signed) { 'out/signed' } else { 'out/unsigned' }
+          "Packaging from $source"
+          foreach ($flavor in 'win-x64', 'win-arm64', 'win-x64-net10-runtime') {
+            Compress-Archive -Path "$source/$flavor/Kenma.exe" -DestinationPath "Kenma-$env:VERSION-$flavor.zip"
+          }
+          Get-FileHash Kenma-*.zip -Algorithm SHA256 |
+            ForEach-Object { "$($_.Hash.ToLower())  $(Split-Path $_.Path -Leaf)" } |
+            Set-Content SHA256SUMS.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Kenma-*.zip
+            SHA256SUMS.txt
+          generate_release_notes: true
