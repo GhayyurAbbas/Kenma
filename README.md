@@ -8,12 +8,12 @@
 
 A tiny Windows tray app that turns rough prompts into clear, well-structured ones, like having a professional prompt engineer one shortcut away.
 
-[![CI](https://github.com/syedghayyurabbas/kenma/actions/workflows/ci.yml/badge.svg)](https://github.com/syedghayyurabbas/kenma/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/syedghayyurabbas/kenma)](https://github.com/syedghayyurabbas/kenma/releases/latest)
+[![CI](https://github.com/GhayyurAbbas/Kenma/actions/workflows/ci.yml/badge.svg)](https://github.com/GhayyurAbbas/Kenma/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/GhayyurAbbas/Kenma)](https://github.com/GhayyurAbbas/Kenma/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D4)
 
-[Download](https://github.com/syedghayyurabbas/kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [Build](#build-from-source) · [Contributing](CONTRIBUTING.md)
+[Download](https://github.com/GhayyurAbbas/Kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [Build](#build-from-source) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -46,18 +46,18 @@ It lives in the system tray, opens with a global shortcut (**Ctrl+Alt+P** by def
 
 ### Download
 
-1. Grab the latest `Kenma-<version>-win-x64.zip` (or `win-arm64`) from [Releases](https://github.com/syedghayyurabbas/kenma/releases/latest).
+1. Grab the latest `Kenma-<version>-win-x64.zip` (or `win-arm64`) from [Releases](https://github.com/GhayyurAbbas/Kenma/releases/latest).
 2. Unzip anywhere and run `Kenma.exe`. No installer and no .NET install needed.
 3. Look for the <code>&lt;◆&gt;</code> icon in the tray, or press **Ctrl+Alt+P**.
 
-### Package managers
+### Package managers (coming soon)
 
 ```powershell
 # winget
 winget install SyedGhayyurAbbas.Kenma
 
 # Scoop
-scoop install https://raw.githubusercontent.com/syedghayyurabbas/kenma/main/packaging/scoop/kenma.json
+scoop install https://raw.githubusercontent.com/GhayyurAbbas/Kenma/main/packaging/scoop/kenma.json
 ```
 
 > **Note:** Until releases are code-signed, Windows SmartScreen may warn on first launch. Choose **More info → Run anyway**, or build from source.
@@ -114,8 +114,8 @@ To uninstall, untick *Start with Windows*, exit from the tray, delete the app fo
 Requires Windows and the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```powershell
-git clone https://github.com/syedghayyurabbas/kenma.git
-cd kenma
+git clone https://github.com/GhayyurAbbas/Kenma.git
+cd Kenma
 dotnet test Kenma.slnx                 # run the test suite
 dotnet run --project Kenma             # run the app
 
