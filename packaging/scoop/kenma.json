@@ -1,0 +1,25 @@
+{
+    "version": "1.0.0",
+    "description": "Sharpen any prompt: a Windows tray app that turns rough prompts into well-structured ones.",
+    "homepage": "https://github.com/syedghayyurabbas/kenma",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/syedghayyurabbas/kenma/releases/download/v1.0.0/Kenma-1.0.0-win-x64.zip",
+            "hash": "REPLACE_WITH_SHA256_FROM_SHA256SUMS"
+        },
+        "arm64": {
+            "url": "https://github.com/syedghayyurabbas/kenma/releases/download/v1.0.0/Kenma-1.0.0-win-arm64.zip",
+            "hash": "REPLACE_WITH_SHA256_FROM_SHA256SUMS"
+        }
+    },
+    "shortcuts": [["Kenma.exe", "Kenma"]],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": { "url": "https://github.com/syedghayyurabbas/kenma/releases/download/v$version/Kenma-$version-win-x64.zip" },
+            "arm64": { "url": "https://github.com/syedghayyurabbas/kenma/releases/download/v$version/Kenma-$version-win-arm64.zip" }
+        },
+        "hash": { "url": "$baseurl/SHA256SUMS.txt" }
+    }
+}

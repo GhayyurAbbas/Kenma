@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="256" height="256">
+  <title>Kenma</title>
+  <defs>
+    <linearGradient id="kenma-gradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A6FFFF"/>
+      <stop offset="1" stop-color="#005A9E"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#kenma-gradient)">
+    <polygon points="11.025,1.575 0.6,12 11.025,22.425 11.025,17.122 5.903,12 11.025,6.878"/>
+    <polygon points="12.975,6.878 18.097,12 12.975,17.122 12.975,22.425 23.4,12 12.975,1.575"/>
+    <polygon points="12,8.85 15.15,12 12,15.15 8.85,12"/>
+  </g>
+</svg>
