@@ -56,18 +56,13 @@ In **Settings → Secrets and variables → Actions** of the repository:
 The next `v*` tag produces signed builds. Depending on the policy, a maintainer may need to approve each
 signing request in SignPath before the workflow continues.
 
-## 4. README section (required by SignPath Foundation, add once approved)
+## 4. README section (required by SignPath Foundation)
+
+The README already has a **Code signing policy** section, worded as pending. Once approved, replace its first
+paragraph with:
 
 ```markdown
-## Code signing policy
-
 Free code signing provided by [SignPath.io](https://signpath.io), certificate by [SignPath Foundation](https://signpath.org).
-
-- Committers and reviewers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
-- Approvers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
-
-Privacy: this program does not transfer any information to other networked systems unless specifically
-requested by the user. Prompts are sent only to the AI engine the user selects. See [Privacy](#privacy).
 ```
 
 Note that SmartScreen reputation also builds up over downloads, so early signed releases may still show a

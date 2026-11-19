@@ -189,6 +189,17 @@ packaging/          winget and Scoop manifests
 docs/               Signing and other docs
 ```
 
+## Code signing policy
+
+Kenma has applied for free code signing by [SignPath.io](https://signpath.io), with a certificate from [SignPath Foundation](https://signpath.org). Until that's approved, releases are unsigned; each release lists SHA-256 checksums in `SHA256SUMS.txt`.
+
+Release builds are made only by GitHub Actions from this repository's source, never uploaded from a developer's machine.
+
+- Committers and reviewers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
+- Approvers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
+
+Privacy: this program does not transfer any information to other networked systems unless specifically requested by the user. Prompts are sent only to the AI engine the user selects. See [Privacy](#privacy).
+
 ## Contributing
 
 Bug reports, new engines and prompt-quality improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. Changes to the system prompt should include before/after examples.
