@@ -191,14 +191,16 @@ docs/               Signing and other docs
 
 ## Code signing policy
 
-Kenma has applied for free code signing by [SignPath.io](https://signpath.io), with a certificate from [SignPath Foundation](https://signpath.org). Until that's approved, releases are unsigned; each release lists SHA-256 checksums in `SHA256SUMS.txt`.
+Free code signing provided by [SignPath.io](https://about.signpath.io), certificate by [SignPath Foundation](https://signpath.org).
+
+*Application in progress: releases up to and including 1.0.0 are unsigned. Each release lists SHA-256 checksums in `SHA256SUMS.txt`.*
 
 Release builds are made only by GitHub Actions from this repository's source, never uploaded from a developer's machine.
 
 - Committers and reviewers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
 - Approvers: [GhayyurAbbas](https://github.com/GhayyurAbbas)
 
-Privacy: this program does not transfer any information to other networked systems unless specifically requested by the user. Prompts are sent only to the AI engine the user selects. See [Privacy](#privacy).
+Privacy policy: This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. Prompts are sent only to the AI engine the user selects, and that provider's own privacy policy applies to them. See [Privacy](#privacy).
 
 ## Contributing
 

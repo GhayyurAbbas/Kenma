@@ -58,12 +58,8 @@ signing request in SignPath before the workflow continues.
 
 ## 4. README section (required by SignPath Foundation)
 
-The README already has a **Code signing policy** section, worded as pending. Once approved, replace its first
-paragraph with:
-
-```markdown
-Free code signing provided by [SignPath.io](https://signpath.io), certificate by [SignPath Foundation](https://signpath.org).
-```
+The README already has the **Code signing policy** section with the required wording. Once approved,
+delete its italic "Application in progress" line. Release notes must also mention SignPath code signing.
 
 Note that SmartScreen reputation also builds up over downloads, so early signed releases may still show a
 warning for a short while.
