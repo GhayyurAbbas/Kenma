@@ -13,7 +13,7 @@ A tiny Windows tray app that turns rough prompts into clear, well-structured one
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D4)
 
-[Download](https://github.com/GhayyurAbbas/Kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [FAQ](#faq) · [Build](#build-from-source) · [Contributing](CONTRIBUTING.md)
+[Download](https://github.com/GhayyurAbbas/Kenma/releases/latest) · [Features](#features) · [Engines](#engines) · [Privacy](#privacy) · [FAQ](#faq) · [Build](#build-from-source) · [Feedback](#feedback)
 
 </div>
 
@@ -202,9 +202,9 @@ Release builds are made only by GitHub Actions from this repository's source, ne
 
 Privacy policy: This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. Prompts are sent only to the AI engine the user selects, and that provider's own privacy policy applies to them. See [Privacy](#privacy).
 
-## Contributing
+## Feedback
 
-Bug reports, new engines and prompt-quality improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. Changes to the system prompt should include before/after examples.
+Kenma is maintained by a single developer and doesn't accept code contributions or pull requests. Bug reports and feature ideas are welcome in [Issues](https://github.com/GhayyurAbbas/Kenma/issues). You're free to fork it under the MIT license.
 
 ## License
 
